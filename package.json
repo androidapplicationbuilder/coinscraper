@@ -12,6 +12,6 @@
     "express": "latest",
     "request": "latest",
     "cheerio": "latest",
-    "tabletojson": "latest"
+    "table-scraper": "latest"
   }
 }

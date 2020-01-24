@@ -59,6 +59,51 @@ app.get('/scrape2', function(req, res){
   
 })
 
+
+app.get('/scrape3', function(req, res){
+ 
+ 
+  
+ scraper
+  .get('https://finance.yahoo.com/trending-tickers')
+  .then(function(tableData) {
+    /*
+       tableData === 
+        [ 
+          [ 
+            { State: 'Minnesota', 'Capitol City': 'Saint Paul', 'Pop.': '3' },
+            { State: 'New York', 'Capitol City': 'Albany', 'Pop.': 'Eight Million' } 
+          ] 
+        ]
+    */
+	    res.send(tableData[0]);
+  });
+  
+})
+
+
+
+app.get('/scrape4', function(req, res){
+ 
+ 
+  
+ scraper
+  .get('https://finance.yahoo.com/most-active')
+  .then(function(tableData) {
+    /*
+       tableData === 
+        [ 
+          [ 
+            { State: 'Minnesota', 'Capitol City': 'Saint Paul', 'Pop.': '3' },
+            { State: 'New York', 'Capitol City': 'Albany', 'Pop.': 'Eight Million' } 
+          ] 
+        ]
+    */
+	    res.send(tableData[0]);
+  });
+  
+})
+
 app.listen(port)
   console.log('Server started on port', port);
 exports = module.exports = app;
